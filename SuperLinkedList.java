@@ -12,10 +12,10 @@ public class SuperLinkedList extends LinkedList<String> {
             {
                 lim=true;
                 iter.remove();
-            }
-        }
+            }//removes vowels
+        }//loops through list
         return lim;
-    }
+    }//end removeVowels() method
 
     public boolean removeConsonants() {
         ListIterator <String> iter = this.listIterator();
@@ -26,34 +26,33 @@ public class SuperLinkedList extends LinkedList<String> {
             {
                 leo=true;
                 iter.remove();
-            }
-        }
+            }//removes consonants
+        }//loops through list
         return leo;
-    }
+    }//end removeConsonants() method
 
     public LinkedList<String> removeDuplicates() {
-        ListIterator <String> iter1 = this.listIterator();
         LinkedList <String> r = new LinkedList <String>();
         int i=0;
-        while(iter1.hasNext())
+        while(i<this.size())
         {
-            ListIterator <String> iter2 = this.listIterator();
-            String med = iter1.next();
+            String med = this.get(i);
+            ListIterator <String> iter = this.listIterator();
             int ii=0;
-            while(iter2.hasNext())
+            while(iter.hasNext())
             {
-                String nik =iter2.next();
+                String nik =iter.next();
                 if((i!=ii)&&med.equals(nik))
                 {
-                    iter2.remove();
                     r.add(nik);
-                }
+                    iter.remove();
+                }//removes duplicates
                 ii++;
-            }
+            }//loops through list for a second time
             i++;
-        }
+        }//loops through list
         return r;
-    }
+    }//end removeDuplicates() method
 
     public LinkedList<String> concatenateStrings() {
         ListIterator <String> iter = this.listIterator();
@@ -63,9 +62,10 @@ public class SuperLinkedList extends LinkedList<String> {
         {   
             nic += iter.next();
             r.add(nic);
-        }
+            
+        }//loops through list
         return r;
-    }
+    }//end concatenateStrings() method
 
     public LinkedList<String> mix(LinkedList<String> list2) {
         ListIterator <String> iter1 = this.listIterator();
@@ -75,9 +75,9 @@ public class SuperLinkedList extends LinkedList<String> {
         {
             r.add(iter1.next());
             r.add(iter2.next());
-        }
+        }//adds string from list 1 then list 2
         return r;
-    }
+    }//end mix() method
 
     public String toString() {
         ListIterator <String> iter = this.listIterator();
@@ -87,7 +87,7 @@ public class SuperLinkedList extends LinkedList<String> {
             kat+=iter.next();
             if(iter.hasNext())
                 kat+=", ";
-        }
+        }//loops through list
         return kat;
-    }
+    }//end toString() method
 } // end SuperLinkedList
