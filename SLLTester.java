@@ -1,6 +1,7 @@
+//Christopher Lee, Pd 6, 12/3/25
+//File will test the coded SuperLinkedList methods
 class SLLTester {
-  //Christopher Lee, pd 6, 12/3/25
-  //File will test the coded SuperLinkedList methods
+  
   public static void main(String[] args) {
     SuperLinkedList e = new SuperLinkedList();
     e.add("a");
@@ -52,7 +53,6 @@ class SLLTester {
     e.add("z");
     e.add("Z");
     System.out.println("\nList e contains before mix: "+e.toString());
-
     System.out.println("List col contains before mix: "+col.toString());
     System.out.println("mix returns: "+e.mix(col));
   } // end main

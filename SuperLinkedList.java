@@ -1,3 +1,6 @@
+//Christopher Lee, Pd 6, 12/3/25
+//Class that will extend the LinkedList class created by Java. 
+// It will have all the same capability of a real LinkedList with the  methods: removeVowels(), removeConsonants(), removeDuplicates(), concatenateStrings(), mix(), and toString()
 import java.util.LinkedList;
 import java.util.ListIterator;
 //import java.util.Iterator;
