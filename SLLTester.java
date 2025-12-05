@@ -1,5 +1,8 @@
 //Christopher Lee, Pd 6, 12/3/25
 //File will test the coded SuperLinkedList methods
+import java.util.LinkedList;
+import java.util.ListIterator;
+
 class SLLTester {
   
   public static void main(String[] args) {
@@ -12,9 +15,11 @@ class SLLTester {
 
     SuperLinkedList jas = new SuperLinkedList();
     jas.add("Z");
+    jas.add("a");
     jas.add("Z");
     jas.add("z");
     jas.add("z");
+    jas.add("u");
     jas.add("z");
 
     SuperLinkedList col = new SuperLinkedList();
@@ -24,16 +29,23 @@ class SLLTester {
     col.add("A");
     col.add("a");
 
-    System.out.println("\nList e contains before removeVowels: "+e.toString());
-    e.removeVowels();
-    System.out.println("After removeVowels, list e contains: "+e.toString());
+    SuperLinkedList a = new SuperLinkedList();
+    a.add("Z");
+    a.add("z");
+    a.add("Z");
+    a.add("z");
+    a.add("Z");
 
-    e.add("c");
-    e.add("d");
-    e.add("a");
-    e.add("u");
-    e.add("z");
-    System.out.println("List e contains before removeConsonants and after things are added: "+e.toString());
+    System.out.println("\nThis is list e: \n"+e.toString());
+    System.out.println("This is list jas: \n"+jas.toString());
+    System.out.println("This is list col: \n"+col.toString());
+    System.out.println("This is list a: \n"+a.toString());
+    
+    System.out.println("\nList jas contains before removeVowels: "+jas.toString());
+    jas.removeVowels();
+    System.out.println("After removeVowels, list jas contains: "+jas.toString());
+
+    System.out.println("\nList e contains before removeConsonants: "+e.toString());
     e.removeConsonants();
     System.out.println("After removeConsonants is run, list e contains: "+ e.toString());
     
@@ -43,17 +55,21 @@ class SLLTester {
 
     
     System.out.println("\nList col contains before concatenateStrings: "+col.toString());
-    System.out.println("concatenateStrings returns: "+col.concatenateStrings());
+    System.out.println("concatenateStrings returns: ");
+    printList(col.concatenateStrings());
 
-
-    e = new SuperLinkedList();
-    e.add("Z");
-    e.add("z");
-    e.add("Z");
-    e.add("z");
-    e.add("Z");
-    System.out.println("\nList e contains before mix: "+e.toString());
+    System.out.println("\nList a contains before mix: "+a.toString());
     System.out.println("List col contains before mix: "+col.toString());
-    System.out.println("mix returns: "+e.mix(col));
+    System.out.println("mix returns: ");
+    printList(a.mix(col));
   } // end main
+  public static void printList(LinkedList<String> e){
+    ListIterator <String> ee = e.listIterator();
+    while(ee.hasNext())
+    {
+      System.out.println(ee.next());
+    }//loops through list
+    
+    
+  }//end printList
 } // end class
